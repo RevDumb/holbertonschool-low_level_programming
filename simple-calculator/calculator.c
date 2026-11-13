@@ -1,11 +1,93 @@
 #include <stdio.h>
 
 /**
- * main - Simple calculator progam
- *
+ * addition - adds two numbers
+ * @a - pointer to first number
+ * @b - pointer to second number
  * Return always 0
  */
+int addition(int *a, int *b)
+{
+	printf("A: ");
+	scanf("%d", a);
 
+	printf("B: ");
+	scanf("%d", b);
+
+	printf("Result: %d\n", a + b);
+
+	return(0);
+}
+
+/**
+ * subtraction - subtracts two numbers
+ * @a - pointer to first number
+ * @b - pointer to second number
+ * Return always 0
+ */
+int subtraction(int *a, int *b)
+{
+	printf("A: ");
+	scanf("%d", a);
+
+	printf("B: ");
+	scanf("%d", b);
+
+	printf("Result: %d\n", a - b);
+
+	return(0);
+}
+
+/**
+ * multiplication - multiplies two numbers
+ * @a - pointer to first number
+ * @b - pointer to second number
+ * Return always 0
+ */
+int multiplication(int *a, int *b)
+{
+	printf("A: ");
+	scanf("%d", a);
+
+	printf("B: ");
+	scanf("%d", b);
+
+	printf("Result: %d\n", a * b);
+
+	return(0);
+}
+
+/**
+ * division - divides two numbers
+ * @a - pointer to first number
+ * @b - pointer to second number
+ * Return always 0
+ */
+int division(int *a, int *b)
+{
+	printf("A: ");
+	scanf("%d", a);
+
+	printf("B: ");
+	scanf("%d", b);
+
+	if (*b == 0)
+	{
+		printf("Error: cannot divide by zero\n");
+	}
+	else
+	{
+		printf("Result: %%lf\n", (double)*a / *b);
+	}
+
+	return(0);
+}
+
+
+/**
+ * main - Simple calculator
+ * Return always 0
+ */
 int main(void)
 {
         int choice;
@@ -32,53 +114,22 @@ int main(void)
 
 		else if (choice == 1)
 		{
-			printf("A: ");
-			scanf("%d", &a);
-
-			printf("B: ");
-			scanf("%d", &b);
-
-			printf("Result: %d\n", a + b);
+			addition(&a, &b);
 		}
 
 		else if (choice == 2)
 		{
-			printf("A: ");
-			scanf("%d", &a);
-
-			printf("B: ");
-			scanf("%d", &b);
-
-			printf("Result: %d\n", a - b);
+			subtraction(&a, &b);
 		}
 
 		else if (choice == 3)
 		{
-			printf("A: ");
-			scanf("%d", &a);
-
-			printf("B: ");
-			scanf("%d", &b);
-
-			printf("Result: %d\n", a * b);
+			multiplication(&a, &b);
 		}
 
 		else if (choice == 4)
 		{
-			printf("A: ");
-			scanf("%d", &a);
-
-			printf("B: ");
-			scanf("%d", &b);
-
-			if (b == 0)
-			{
-				printf("Error: division by zero\n");
-			}
-			else
-			{
-				printf("Result: %.1f\n", (double)a / b);
-			}
+			division(&a, &b);		}
 		}
 
 		else if (choice < 0 || choice > 4)
