@@ -14,7 +14,7 @@ int addition(int *a, int *b)
 	printf("B: ");
 	scanf("%d", b);
 
-	printf("Result: %d\n", a + b);
+	printf("Result: %d\n", *a + *b);
 
 	return(0);
 }
@@ -33,7 +33,7 @@ int subtraction(int *a, int *b)
 	printf("B: ");
 	scanf("%d", b);
 
-	printf("Result: %d\n", a - b);
+	printf("Result: %d\n", *a - *b);
 
 	return(0);
 }
@@ -52,7 +52,7 @@ int multiplication(int *a, int *b)
 	printf("B: ");
 	scanf("%d", b);
 
-	printf("Result: %d\n", a * b);
+	printf("Result: %d\n", *a * *b);
 
 	return(0);
 }
@@ -77,7 +77,7 @@ int division(int *a, int *b)
 	}
 	else
 	{
-		printf("Result: %%lf\n", (double)*a / *b);
+		printf("Result: %.1f\n", (double)*a / *b);
 	}
 
 	return(0);
@@ -109,7 +109,7 @@ int main(void)
         	if (choice == 0)
        		{
                		printf("Bye!\n");
-				break;
+			break;
        		}
 
 		else if (choice == 1)
@@ -129,13 +129,13 @@ int main(void)
 
 		else if (choice == 4)
 		{
-			division(&a, &b);		}
+			division(&a, &b);		
 		}
-
 		else if (choice < 0 || choice > 4)
-			{
-				printf("Invalid choice\n");
-			}
+		{
+			printf("Invalid choice\n");
+		}
 	}
+
         return (0);
 }
